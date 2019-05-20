@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Form</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div>
+		<h2>Form</h2>
+		<form>
+			<table>
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" name="name" placeholder="Enter your name"></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" name="email" placeholder="Enter your email"></td>
+				</tr>
+				<tr>
+					<td>Gender:</td>
+					<td>
+						<input type="radio" name="gender" value="male" checked> Male
+						<input type="radio" name="gender" value="female"> Female
+					</td>
+				</tr>
+				<tr>
+					<td>Number:</td>
+					<td><input type="number" name="number"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" onclick="saveform()" value="Submit"></td>
+				</tr>
+			</table>
+		</form>
+		<script>
+			function saveform() {
+				alert("HI");
+			}
+		</script>
+	</div>
+</body>
+</html>
