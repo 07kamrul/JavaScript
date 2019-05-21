@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<p>Hello</p>
+		<form>
+			<table align="center">
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" name="name" placeholder="Enter your name" required id="name"></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="background-color: red" align="center" ><input type="submit" onclick="myfunction()" class="btn btn-success" value="save"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</form>
+		<script>
+			function myfunction() {
+				var x= document.getElementById('name').value;
+				if (x == "") {
+					alert("Name Can't Empty");	
+				}
+				else if(x.length<8 || x.length>21){
+					alert("Name more than 8 characters.")
+				}
+				else{
+					alert(x.length);
+				}
+				
+			}
+		</script>
+	</div>
+	
+</body>
+</html>
