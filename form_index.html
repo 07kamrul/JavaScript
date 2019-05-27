@@ -12,41 +12,62 @@
 <body>
 	<div class="container">
 		<p>Hello</p>
-		<form>
+		<form action=" " method="post" onsubmit="return myfunction()">
 			<table align="center">
 				<tr>
 					<td>Name:</td>
-					<td><input type="text" name="name" placeholder="Enter your name" required id="name"></td>
+					<td><input type="text" name="name" placeholder="Enter your name" required id="name"><span id="err"></span></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" name="email" placeholder="Enter your email" required id="email"><span id="err"></span></td>
 				</tr>
 				<tr>
 					<td colspan="2" style="background-color: red" align="center" ><input type="submit" onclick="myfunction()" class="btn btn-success" value="save"></td>
 				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
+				
 			</table>
 		</form>
 		<script>
 			function myfunction() {
 				var x= document.getElementById('name').value;
+				var e= document.getElementById('email').value;
+
+				var errMsg=document.getElementById("err");
+				
 				if (x == "") {
-					alert("Name Can't Empty");	
+					errMsg.innerHTML="UserName not empty";
+					return false;
 				}
-				else if(x.length<8 || x.length>21){
+				/*else if(x.length<8 || x.length>21){
 					alert("Name more than 8 characters.")
 				}
 				else{
 					alert(x.length);
+				}*/
+				else if(!x.startsWith("Mr") || !x.startsWith("Mrs"))
+				{
+					errMsg.innerHTML="UserName must start with Mr or Mrs";
+					return false;
+
 				}
-				
+				else if(!e.endsWith("@gmail.com") || !e.endsWith("@yahoo.com")){
+					errMsg.innerHTML="UserName must end with @gmail.com or @yahoo.com";
+					return false;
+
+				}
+
+				else
+				{
+					alert(x);
+					return false;
+				//alert(x.length);
 			}
-		</script>
-	</div>
-	
+		}
+
+
+	</script>
+</div>
+
 </body>
 </html>

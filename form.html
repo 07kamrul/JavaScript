@@ -5,19 +5,34 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Form</title>
 	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-	<div>
+	<div class="container">
 		<h2>Form</h2>
 		<form>
-			<table>
+			<table align="center" >
 				<tr>
-					<td>Name:</td>
-					<td><input type="text" name="name" placeholder="Enter your name"></td>
+					<td>Username:</td>
+					<td><input type="text" name="name" placeholder="Enter Username" required></td>
+				</tr>
+				<tr>
+					<td>Full Name:</td>
+					<td><input type="text" name="name" placeholder="Enter your full name" required></td>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><input type="text" name="email" placeholder="Enter your email"></td>
+					<td><input type="text" name="email" placeholder="Enter your email" required></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password" placeholder="Enter your password" required></td>
+				</tr>
+				<tr>
+					<td>Number:</td>
+					<td><input type="number" name="number" placeholder="Enter your number" required></td>
 				</tr>
 				<tr>
 					<td>Gender:</td>
@@ -26,10 +41,7 @@
 						<input type="radio" name="gender" value="female"> Female
 					</td>
 				</tr>
-				<tr>
-					<td>Number:</td>
-					<td><input type="number" name="number"></td>
-				</tr>
+				
 				<tr>
 					<td></td>
 					<td><input type="submit" onclick="saveform()" value="Submit"></td>
