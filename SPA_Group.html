@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div class="container" >
+		<input type="button" value="REGISTRATION" onclick="showReg()">
+		<input type="button" value="Display" onclick="display()"><br/><br/>
+
+		<div id="reg">
+			<form action="" >
+				<input type="text" id="idTextField" onclick="hide()">
+				<span id="errorMessage"></span>
+				<br>
+				<input type="text" id="emailTextField" onclick="hide()">
+				<span id="errorMessageEmail"></span>
+				<br>
+				<input type="text" id="phoneTextField" onclick="hide()">
+				<span id="errorMessagePhone"></span>
+				<br>
+				<input type="button" class="btn btn-success" value="SAVE" onclick="validate()" >
+			</form>
+		</div>
+		<div id="show">
+			<center>
+				<table border="1">
+					<tr>
+						<th>Name </th>
+						<th>Email</th>
+						<th>Phone</th>
+					</tr>
+					<tr>
+						<td id="name"></td>
+						<td id="email"></td>
+						<td id="phone"></td>
+					</tr>
+				</table>
+			</center>
+		</div>
+		<script>
+			$("#show").hide();
+			$("#reg").hide();
+			function showReg(){
+				$("#reg").show();
+				$("#show").hide();
+			}
+			function display(){
+				var idTextField=document.getElementById("idTextField").value;
+				var emailTextField=document.getElementById("emailTextField").value;
+				var phoneTextField=document.getElementById("phoneTextField").value;
+				$("#reg").hide();
+				$("#show").show();
+				var n = document.getElementById("name");
+				var e = document.getElementById("email");
+				var id = document.getElementById("phone");
+				n.innerHTML = idTextField;
+				e.innerHTML = emailTextField;
+				id.innerHTML = phoneTextField;
+			}
+			var x = {
+				"name" : "Hasan",
+				"Age" : "90",
+				"Skills" : ["HTML", "PHP", 70],
+				"ID" : 1
+			};
+			
+			
+			function validate(){
+				var idTextField=document.getElementById("idTextField").value;
+				var emailTextField=document.getElementById("emailTextField").value;
+				var phoneTextField=document.getElementById("phoneTextField").value;
+				var err=document.getElementById("errorMessage");
+				var errEmail=document.getElementById("errorMessageEmail");
+				var errPhone=document.getElementById("errorMessagePhone");
+				if(idTextField==""){
+					err.style.color="red";
+					err.innerHTML="Name Can't Empty";
+					err.style.visibility='visible';
+					idTextField.style.backgroundColor="red";
+				}else if(!idTextField.startsWith("Md") && !idTextField.startsWith("Mr") && !idTextField.startsWith("Mrs")){
+					err.style.color="red";
+					err.innerHTML="Invalid Name";
+					err.style.visibility='visible';
+					idTextField.style.backgroundColor="red";
+				}
+				if(emailTextField==""){
+					errEmail.style.color="red";
+					errEmail.innerHTML="Email Can't Empty";
+					errEmail.style.visibility='visible';
+					emailTextField.style.backgroundColor="red";
+				}else if(!emailTextField.endsWith("@gmail.com")){
+					errEmail.style.color="red";
+					errEmail.innerHTML="Invalid Email";
+					errEmail.style.visibility='visible';
+					emailTextField.style.backgroundColor="red";
+				}if(phoneTextField==""){
+					errPhone.style.color="red";
+					errPhone.innerHTML="Phone Can't Empty";
+					errPhone.style.visibility='visible';
+					emailTextField.style.backgroundColor="red";
+				}else if(!phoneTextField.startsWith("017")){
+					errPhone.style.color="red";
+					errPhone.innerHTML="Invalid Phone";
+					errPhone.style.visibility='visible';
+					phoneTextField.style.backgroundColor="red";
+				}
+				else if(phoneTextField.length!=11){
+					errPhone.style.color="red";
+					errPhone.innerHTML="Lenth of Phone invalid";
+					errPhone.style.visibility='visible';
+					phoneTextField.style.backgroundColor="red";
+				}
+				else{
+					alert("Successfully added "+idTextField);
+				}
+			}
+			function hide(){
+				var err=document.getElementById("errorMessage").style.visibility='hidden';
+				var errEmail=document.getElementById("errorMessageEmail").style.visibility='hidden';
+				var errPhone=document.getElementById("errorMessagePhone").style.visibility='hidden';
+			}
+		</script>
+	</div>
+</body>
+</html>
