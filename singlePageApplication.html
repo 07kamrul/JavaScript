@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	
+	<div class="container">
+
+		<input type="button" value="REGISTRATION" onclick="showReg()">
+		<input type="button" value="Display" onclick="display()"><br/><br/>
+
+		<div id="reg">
+			<form action="" >
+				<table>
+					<tr>
+						<td>Name:</td>
+						<td><input type="text" id="idTextField" onclick="hide()"></td>
+						<td><span id="errorMessage"></span></td>
+					</tr>
+					<tr>
+						<td>Email:</td>
+						<td><input type="text" id="emailTextField" onclick="hide()">
+						</td>
+						<td><span id="errorMessageEmail"></span></td>
+					</tr>
+					<tr>
+						<td>Phone:</td>
+						<td><input type="text" id="phoneTextField" onclick="hide()"></td>
+						<td><span id="errorMessagePhone"></span></td>
+					</tr>
+					<tr>
+
+						<td></td>
+						<td><input type="button" class="btn btn-success" value="SAVE" onclick="validate()" ></td>
+						<td></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+		<div id="show">
+			<center>
+				<table border="1">
+					<tr>
+						<th>Name </th>
+						<th>Email</th>
+						<th>Phone</th>
+					</tr>
+					<tr>
+						<td id="name"></td>
+						<td id="email"></td>
+						<td id="phone"></td>
+					</tr>
+				</table>
+			</center>
+		</div>
+		
+	</div>
+	<script src="singlePageApplication.js"></script>
+</body>
+</html>
